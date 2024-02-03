@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+</head>
+<body>
+    <h1>Aula de Flask</h1><br>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat cumque fuga blanditiis! Magni inventore quis possimus sit repellat labore, aliquam veritatis qui veniam quisquam, error dignissimos unde voluptates provident nulla.</p>
+
+    <h3>nome: {{nome}}</h3><br>
+    <h3>Idade: {{idade}}</h3>
+
+    {% if idade < 18%}
+        <h4>Menor de idade, não pode entrar</h4>
+    {% else %}
+        <h4>Maior de idade, pode entrar</h4>
+    {% endif %}
+
+    <h1>Familia</h1>
+    <ul>
+        {% for nomes in lista_nomes %}
+            <li>{{ nomes }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
